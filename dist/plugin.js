@@ -457,13 +457,6 @@ var require_lodash = __commonJS({
   }
 });
 
-// external-global-plugin:date-fns
-var require_date_fns = __commonJS({
-  "external-global-plugin:date-fns"(exports, module) {
-    module.exports = window.datefns;
-  }
-});
-
 // external-global-plugin:react-router-dom
 var require_react_router_dom = __commonJS({
   "external-global-plugin:react-router-dom"(exports, module) {
@@ -492,10 +485,10 @@ var require_pro_components = __commonJS({
   }
 });
 
-// external-global-plugin:@veramo-community/react-components
-var require_react_components = __commonJS({
-  "external-global-plugin:@veramo-community/react-components"(exports, module) {
-    module.exports = window.veramoreactcomponents;
+// external-global-plugin:@veramo-community/agent-explorer-plugin
+var require_agent_explorer_plugin = __commonJS({
+  "external-global-plugin:@veramo-community/agent-explorer-plugin"(exports, module) {
+    module.exports = window.agentexplorerplugin;
   }
 });
 
@@ -1727,256 +1720,38 @@ if (true) {
 }
 var CrownOutlined_default2 = /* @__PURE__ */ React4.forwardRef(CrownOutlined2);
 
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/icons/DownloadOutlined.js
-var React5 = __toESM(require_react());
-
-// node_modules/.pnpm/@ant-design+icons-svg@4.3.1/node_modules/@ant-design/icons-svg/es/asn/DownloadOutlined.js
-var DownloadOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M505.7 661a8 8 0 0012.6 0l112-141.7c4.1-5.2.4-12.9-6.3-12.9h-74.1V168c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v338.3H400c-6.7 0-10.4 7.7-6.3 12.9l112 141.8zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z" } }] }, "name": "download", "theme": "outlined" };
-var DownloadOutlined_default = DownloadOutlined;
-
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/icons/DownloadOutlined.js
-var DownloadOutlined2 = function DownloadOutlined3(props, ref) {
-  return /* @__PURE__ */ React5.createElement(AntdIcon_default, _extends({}, props, {
-    ref,
-    icon: DownloadOutlined_default
-  }));
-};
-if (true) {
-  DownloadOutlined2.displayName = "DownloadOutlined";
-}
-var DownloadOutlined_default2 = /* @__PURE__ */ React5.forwardRef(DownloadOutlined2);
-
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/icons/EllipsisOutlined.js
-var React6 = __toESM(require_react());
-
-// node_modules/.pnpm/@ant-design+icons-svg@4.3.1/node_modules/@ant-design/icons-svg/es/asn/EllipsisOutlined.js
-var EllipsisOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z" } }] }, "name": "ellipsis", "theme": "outlined" };
-var EllipsisOutlined_default = EllipsisOutlined;
-
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/icons/EllipsisOutlined.js
-var EllipsisOutlined2 = function EllipsisOutlined3(props, ref) {
-  return /* @__PURE__ */ React6.createElement(AntdIcon_default, _extends({}, props, {
-    ref,
-    icon: EllipsisOutlined_default
-  }));
-};
-if (true) {
-  EllipsisOutlined2.displayName = "EllipsisOutlined";
-}
-var EllipsisOutlined_default2 = /* @__PURE__ */ React6.forwardRef(EllipsisOutlined2);
-
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/icons/InfoCircleOutlined.js
-var React7 = __toESM(require_react());
-
-// node_modules/.pnpm/@ant-design+icons-svg@4.3.1/node_modules/@ant-design/icons-svg/es/asn/InfoCircleOutlined.js
-var InfoCircleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" } }, { "tag": "path", "attrs": { "d": "M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z" } }] }, "name": "info-circle", "theme": "outlined" };
-var InfoCircleOutlined_default = InfoCircleOutlined;
-
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/icons/InfoCircleOutlined.js
-var InfoCircleOutlined2 = function InfoCircleOutlined3(props, ref) {
-  return /* @__PURE__ */ React7.createElement(AntdIcon_default, _extends({}, props, {
-    ref,
-    icon: InfoCircleOutlined_default
-  }));
-};
-if (true) {
-  InfoCircleOutlined2.displayName = "InfoCircleOutlined";
-}
-var InfoCircleOutlined_default2 = /* @__PURE__ */ React7.forwardRef(InfoCircleOutlined2);
-
 // src/Kudos.tsx
-var import_date_fns = __toESM(require_date_fns(), 1);
-var import_react_router_dom2 = __toESM(require_react_router_dom(), 1);
-var import_react_query3 = __toESM(require_react_query(), 1);
-var import_veramo_react4 = __toESM(require_veramo_react(), 1);
-var import_pro_components = __toESM(require_pro_components(), 1);
-var import_react_components = __toESM(require_react_components(), 1);
-
-// src/IdentifierProfile.tsx
-var import_antd = __toESM(require_antd(), 1);
-var import_veramo_react = __toESM(require_veramo_react(), 1);
-var import_react_query = __toESM(require_react_query(), 1);
-
-// src/utils/did.ts
-function shortId(id) {
-  if (!id)
-    return "";
-  function shortDotSeparatedString(str) {
-    const parts2 = str.split(".");
-    if (parts2.length === 1) {
-      return str;
-    }
-    return parts2.map((part) => {
-      if (part.length > 10) {
-        return part.substring(0, 1) + "." + part.substring(part.length - 1);
-      } else {
-        return part;
-      }
-    }).join(".");
-  }
-  const parts = id.split(":");
-  return parts.map((part) => {
-    if (part.length > 41) {
-      const str = shortDotSeparatedString(part);
-      if (part !== str)
-        return str;
-      return str.substring(0, 7) + "..." + str.substring(str.length - 5);
-    } else {
-      return part;
-    }
-  }).join(":");
-}
-function getIssuerDID(credential) {
-  if (typeof credential.issuer === "string") {
-    return credential.issuer;
-  } else {
-    return credential.issuer.id;
-  }
-}
-
-// src/IdentifierProfile.tsx
-var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
-var IdentifierProfile = ({
-  did,
-  showShortId = true
-}) => {
-  const { agent } = (0, import_veramo_react.useVeramo)();
-  const { token } = import_antd.theme.useToken();
-  const { data, isLoading } = (0, import_react_query.useQuery)(
-    ["identifierProfile", did, agent?.context.id],
-    () => did ? agent?.getIdentifierProfile({ did }) : void 0
-  );
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_antd.Row, { align: "middle", wrap: false, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_antd.Col, { style: { marginRight: token.padding }, children: [
-      !isLoading && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Avatar, { src: data?.picture }),
-      isLoading && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Skeleton.Avatar, { active: true })
-    ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_antd.Col, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { style: { justifyItems: "flex-start", display: "flex" }, children: [
-        !isLoading && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Typography.Text, { ellipsis: true, children: data?.name }),
-        isLoading && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Skeleton.Input, { style: { width: 100 }, active: true })
-      ] }),
-      showShortId && data?.name && data?.name !== shortId(did) && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-        import_antd.Typography.Text,
-        {
-          ellipsis: true,
-          style: { color: token.colorTextSecondary },
-          children: shortId(did)
-        }
-      ) })
-    ] })
-  ] });
-};
-var IdentifierProfile_default = IdentifierProfile;
-
-// src/CredentialActionsDropdown.tsx
-var import_antd2 = __toESM(require_antd(), 1);
-var import_veramo_react2 = __toESM(require_veramo_react(), 1);
+var import_react4 = __toESM(require_react(), 1);
 var import_react_router_dom = __toESM(require_react_router_dom(), 1);
-var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
-var CredentialActionsDropdown = ({ children, credential }) => {
-  const { agents, getAgent } = (0, import_veramo_react2.useVeramo)();
-  const navigate = (0, import_react_router_dom.useNavigate)();
-  const { notification } = import_antd2.App.useApp();
-  const agentsToCopyTo = agents.filter(
-    (agent) => agent.availableMethods().includes("dataStoreSaveVerifiableCredential")
-  );
-  const handleCopyTo = async (agentId) => {
-    const agent = getAgent(agentId);
-    try {
-      await agent.dataStoreSaveVerifiableCredential({
-        verifiableCredential: credential
-      });
-      notification.success({
-        message: "Credential copied to: " + agent.context.name
-      });
-    } catch (e) {
-      notification.error({
-        message: "Error copying credential to: " + agent.context.name,
-        description: e.message
-      });
-    }
-  };
-  const handleDownload = () => {
-    const element = document.createElement("a");
-    const file = new Blob([JSON.stringify(credential, null, 2)], {
-      type: "text/plain"
-    });
-    element.href = URL.createObjectURL(file);
-    element.download = "verifiable-credential.json";
-    document.body.appendChild(element);
-    element.click();
-  };
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-    import_antd2.Dropdown,
-    {
-      menu: {
-        items: [
-          {
-            key: "issuer",
-            label: "Issuer",
-            icon: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(InfoCircleOutlined_default2, {}),
-            onClick: () => navigate("/contacts/" + getIssuerDID(credential))
-          },
-          {
-            key: "subject",
-            label: "Subject",
-            icon: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(InfoCircleOutlined_default2, {}),
-            onClick: () => navigate(
-              "/contacts/" + encodeURIComponent(credential.credentialSubject.id)
-            )
-          },
-          {
-            key: "download",
-            label: "Download",
-            icon: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(DownloadOutlined_default2, {}),
-            onClick: handleDownload
-          },
-          {
-            key: "copy",
-            label: "Copy to",
-            type: "group",
-            children: agentsToCopyTo.map((_agent, index) => {
-              return {
-                key: index,
-                onClick: () => handleCopyTo(_agent.context?.id),
-                label: _agent.context?.name
-              };
-            })
-          }
-        ]
-      },
-      children
-    }
-  );
-};
-var CredentialActionsDropdown_default = CredentialActionsDropdown;
-
-// src/Kudos.tsx
-var import_antd4 = __toESM(require_antd(), 1);
+var import_react_query2 = __toESM(require_react_query(), 1);
+var import_veramo_react2 = __toESM(require_veramo_react(), 1);
+var import_pro_components = __toESM(require_pro_components(), 1);
+var import_agent_explorer_plugin2 = __toESM(require_agent_explorer_plugin(), 1);
+var import_antd2 = __toESM(require_antd(), 1);
 
 // src/ComposeKudosForm.tsx
 var import_react3 = __toESM(require_react(), 1);
-var import_antd3 = __toESM(require_antd(), 1);
-var import_veramo_react3 = __toESM(require_veramo_react(), 1);
-var import_react_query2 = __toESM(require_react_query(), 1);
-var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
-var { Option } = import_antd3.Select;
+var import_antd = __toESM(require_antd(), 1);
+var import_veramo_react = __toESM(require_veramo_react(), 1);
+var import_react_query = __toESM(require_react_query(), 1);
+var import_agent_explorer_plugin = __toESM(require_agent_explorer_plugin(), 1);
+var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
+var { Option } = import_antd.Select;
 var ComposeKudosForm = ({
   onNewKudos
 }) => {
-  const { agent } = (0, import_veramo_react3.useVeramo)();
-  const { token } = import_antd3.theme.useToken();
-  const [form] = import_antd3.Form.useForm();
-  const issuer = import_antd3.Form.useWatch("issuer", { form, preserve: true });
-  const subject = import_antd3.Form.useWatch("subject", { form, preserve: true });
+  const { agent } = (0, import_veramo_react.useVeramo)();
+  const { token } = import_antd.theme.useToken();
+  const [form] = import_antd.Form.useForm();
+  const issuer = import_antd.Form.useWatch("issuer", { form, preserve: true });
+  const subject = import_antd.Form.useWatch("subject", { form, preserve: true });
   const [issuerProfile, setIssuerProfile] = (0, import_react3.useState)();
   const [managedIdentifiers, setManagedIdentifiers] = (0, import_react3.useState)([]);
   const [
     managedIdentifiersWithProfiles,
     setManagedIdentifiersWithProfiles
   ] = (0, import_react3.useState)([]);
-  (0, import_react_query2.useQuery)(
+  (0, import_react_query.useQuery)(
     ["identifiers", { id: agent?.context.id }],
     () => agent?.didManagerFind(),
     {
@@ -2008,8 +1783,8 @@ var ComposeKudosForm = ({
       console.log("Validate Failed:", info);
     });
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
-    import_antd3.Form,
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+    import_antd.Form,
     {
       form,
       layout: "inline",
@@ -2022,15 +1797,15 @@ var ComposeKudosForm = ({
         marginRight: token.controlPaddingHorizontal
       },
       children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Form.Item, { name: "issuer", hidden: true, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Input, {}) }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Form.Item, { name: "subject", label: "To", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Input, { placeholder: "did:example:123" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Form.Item, { name: "kudos", label: "Kudos", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Input, { placeholder: "Thank you!" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Form.Item, { children: managedIdentifiersWithProfiles.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
-          import_antd3.Dropdown.Button,
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Form.Item, { name: "issuer", hidden: true, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Input, {}) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Form.Item, { name: "subject", label: "To", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Input, { placeholder: "did:example:123" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Form.Item, { name: "kudos", label: "Kudos", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Input, { placeholder: "Thank you!" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Form.Item, { children: managedIdentifiersWithProfiles.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          import_antd.Dropdown.Button,
           {
             type: "primary",
             onClick: handleOk,
-            icon: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Avatar, { size: "small", src: issuerProfile?.picture }),
+            icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Avatar, { size: "small", src: issuerProfile?.picture }),
             menu: {
               items: [
                 ...managedIdentifiersWithProfiles.map((profile) => {
@@ -2040,7 +1815,7 @@ var ComposeKudosForm = ({
                       setIssuerProfile(profile);
                       form.setFieldValue("issuer", profile.did);
                     },
-                    label: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(IdentifierProfile_default, { did: profile.did })
+                    label: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_agent_explorer_plugin.IdentifierProfile, { did: profile.did })
                   };
                 })
               ],
@@ -2056,12 +1831,20 @@ var ComposeKudosForm = ({
 };
 
 // src/Kudos.tsx
-var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var Kudos = () => {
-  const navigate = (0, import_react_router_dom2.useNavigate)();
-  const { agent } = (0, import_veramo_react4.useVeramo)();
-  const { notification } = import_antd4.App.useApp();
-  const { data: credentials, isLoading, refetch } = (0, import_react_query3.useQuery)(
+  const navigate = (0, import_react_router_dom.useNavigate)();
+  const [pageSize, setPageSize] = import_react4.default.useState(10);
+  const [page, setPage] = import_react4.default.useState(1);
+  const { agent } = (0, import_veramo_react2.useVeramo)();
+  const { notification } = import_antd2.App.useApp();
+  const { data: credentialsCount } = (0, import_react_query2.useQuery)(
+    ["credentialsCount", { agentId: agent?.context.name }],
+    () => agent?.dataStoreORMGetVerifiableCredentialsCount({
+      where: [{ column: "type", value: ["VerifiableCredential,Kudos"] }]
+    })
+  );
+  const { data: credentials, isLoading, refetch } = (0, import_react_query2.useQuery)(
     ["credentials", { agentId: agent?.context.name }],
     () => agent?.dataStoreORMGetVerifiableCredentials({
       where: [{ column: "type", value: ["VerifiableCredential,Kudos"] }],
@@ -2103,75 +1886,90 @@ var Kudos = () => {
       refetch();
     }
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(import_pro_components.PageContainer, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_pro_components.PageContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       ComposeKudosForm,
       {
         onNewKudos: handleNewKudos
       }
     ),
-    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-      import_pro_components.ProList,
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      import_antd2.List,
       {
-        ghost: true,
-        loading: isLoading,
+        itemLayout: "vertical",
+        size: "large",
         pagination: {
-          defaultPageSize: 10
-        },
-        grid: { column: 1, lg: 1, xxl: 1, xl: 1 },
-        onItem: (record) => {
-          return {
-            onClick: () => {
-              navigate("/credentials/" + record.hash);
-            }
-          };
-        },
-        metas: {
-          title: {},
-          content: {},
-          actions: {
-            cardActionProps: "extra"
+          position: "both",
+          pageSize,
+          current: page,
+          total: credentialsCount,
+          showSizeChanger: true,
+          onChange(page2, pageSize2) {
+            setPage(page2);
+            setPageSize(pageSize2);
           }
         },
-        dataSource: credentials?.map((item) => {
-          return {
-            title: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(IdentifierProfile_default, { did: getIssuerDID(item.verifiableCredential) }),
-            actions: [
-              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { children: (0, import_date_fns.formatRelative)(
-                new Date(item.verifiableCredential.issuanceDate),
-                /* @__PURE__ */ new Date()
-              ) }),
-              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(CredentialActionsDropdown_default, { credential: item.verifiableCredential, children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_antd4.Button, { type: "text", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(EllipsisOutlined_default2, {}) }) })
-            ],
-            content: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { style: { width: "100%" }, children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_react_components.VerifiableCredential, { credential: item.verifiableCredential }) }),
-            hash: item.hash
-          };
-        })
+        dataSource: credentials,
+        renderItem: (item) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { style: { marginTop: "20px" }, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_agent_explorer_plugin2.VerifiableCredentialComponent, { credential: item }) })
       }
     )
   ] });
 };
 
+// src/KudosCredential.tsx
+var import_antd3 = __toESM(require_antd(), 1);
+var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
+var KudosCredential = ({ credential: { verifiableCredential } }) => {
+  const { token } = import_antd3.theme.useToken();
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Row, { style: { marginTop: token.margin }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_antd3.Col, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_antd3.Typography.Text, { strong: true, children: [
+        "\u{1F3C6} Kudos to ",
+        verifiableCredential.credentialSubject.avatar && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Avatar, { src: verifiableCredential.credentialSubject.avatar, shape: "circle", size: "small" }),
+        " ",
+        verifiableCredential.credentialSubject.name
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Typography.Paragraph, { children: verifiableCredential.credentialSubject.kudos })
+    ] }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Row, { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Typography.Text, { type: "secondary", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_antd3.Space, { direction: "horizontal", children: [
+      verifiableCredential.credentialSubject.authorAvatar && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_antd3.Avatar, { src: verifiableCredential.credentialSubject.authorAvatar, shape: "circle", size: "small" }),
+      verifiableCredential.credentialSubject.authorName,
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "divider", children: "\u2022" }),
+      verifiableCredential.credentialSubject.channelName,
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: "divider", children: "\u2022" }),
+      verifiableCredential.credentialSubject.guildName
+    ] }) }) })
+  ] });
+};
+
 // src/index.tsx
-var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
 var Plugin = {
+  //@ts-ignore
   init: () => {
     return {
       name: "Kudos",
       description: "Explore and give kudos",
+      requiredMethods: [],
       routes: [
         {
           path: "/kudos",
-          element: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Kudos, {})
+          element: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Kudos, {})
         }
       ],
       menuItems: [
         {
           name: "Kudos",
           path: "/kudos",
-          icon: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(CrownOutlined_default2, {})
+          icon: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(CrownOutlined_default2, {})
         }
-      ]
+      ],
+      getCredentialComponent: (credential) => {
+        if (credential.verifiableCredential.type?.includes("Kudos")) {
+          return KudosCredential;
+        }
+        return void 0;
+      }
     };
   }
 };

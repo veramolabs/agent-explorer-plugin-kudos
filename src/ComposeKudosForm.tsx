@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Avatar, Button, Dropdown, Form, Input, Select, theme, } from 'antd'
+import { Avatar, Dropdown, Form, Input, Select, theme, } from 'antd'
 import { useVeramo } from '@veramo-community/veramo-react'
 import { useQuery } from 'react-query'
 import { IIdentifier } from '@veramo/core'
-import { IIdentifierProfile } from './types'
-import IdentifierProfile from './IdentifierProfile'
-import { DownOutlined } from '@ant-design/icons'
+import { IIdentifierProfile, IdentifierProfile } from '@veramo-community/agent-explorer-plugin'
 
 const { Option } = Select
 

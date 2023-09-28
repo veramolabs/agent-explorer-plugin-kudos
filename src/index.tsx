@@ -3,14 +3,18 @@ import {
   CrownOutlined,
 } from '@ant-design/icons'
 
-import { IPlugin } from './types';
+import { IPlugin } from '@veramo-community/agent-explorer-plugin';
 import { Kudos } from './Kudos';
+import { UniqueVerifiableCredential } from '@veramo/core';
+import { KudosCredential } from './KudosCredential';
 
 const Plugin: IPlugin = {
+    //@ts-ignore
     init: () => {
         return {
           name: 'Kudos',
           description: 'Explore and give kudos',
+          requiredMethods: [],
           routes: [
             {
               path: '/kudos',
@@ -24,7 +28,13 @@ const Plugin: IPlugin = {
               icon: <CrownOutlined />,
             },
           ],
-          
+          getCredentialComponent: (credential: UniqueVerifiableCredential) => {
+            if (credential.verifiableCredential.type?.includes('Kudos')) {
+              return KudosCredential
+            }
+            return undefined
+          },
+
         }
     }
 };

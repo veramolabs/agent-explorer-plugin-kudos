@@ -1,22 +1,27 @@
-import React, { useState } from 'react'
-import { formatRelative, set } from 'date-fns'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useQuery } from 'react-query'
 import { useVeramo } from '@veramo-community/veramo-react'
-import { PageContainer, ProList } from '@ant-design/pro-components'
-import { VerifiableCredential } from '@veramo-community/react-components'
-import { IDataStore, IDataStoreORM, UniqueVerifiableCredential } from '@veramo/core'
-import { EllipsisOutlined, PlusOutlined } from '@ant-design/icons'
-import IdentifierProfile from './IdentifierProfile'
-import { getIssuerDID } from './utils/did'
-import CredentialActionsDropdown from './CredentialActionsDropdown'
-import { App, Button } from 'antd'
+import { PageContainer } from '@ant-design/pro-components'
+import { IDataStore, IDataStoreORM } from '@veramo/core'
+import { VerifiableCredentialComponent } from '@veramo-community/agent-explorer-plugin'
+import { App, List } from 'antd'
 import { ComposeKudosForm, ComposeKudosFormValues } from './ComposeKudosForm'
 
 export const Kudos = () => {
   const navigate = useNavigate()
+  const [pageSize, setPageSize] = React.useState(10)
+  const [page, setPage] = React.useState(1)
   const { agent } = useVeramo<IDataStoreORM & IDataStore>()
   const { notification } = App.useApp()
+
+  const { data: credentialsCount } = useQuery(
+    ['credentialsCount', { agentId: agent?.context.name }],
+    () =>
+      agent?.dataStoreORMGetVerifiableCredentialsCount({
+        where: [{ column: 'type', value: ['VerifiableCredential,Kudos'] }],
+      }),
+  )
 
   const { data: credentials, isLoading, refetch } = useQuery(
     ['credentials', { agentId: agent?.context.name }],
@@ -74,54 +79,29 @@ export const Kudos = () => {
       <ComposeKudosForm
         onNewKudos={handleNewKudos}
       />
-      <ProList
-        ghost
-        loading={isLoading}
+
+      <List
+        itemLayout="vertical"
+        size="large"
         pagination={{
-          defaultPageSize: 10,
-        }}
-        grid={{ column: 1, lg: 1, xxl: 1, xl: 1 }}
-        onItem={(record: any) => {
-          return {
-            onClick: () => {
-              navigate('/credentials/' + record.hash)
-            },
-          }
-        }}
-        metas={{
-          title: {},
-          content: {},
-          actions: {
-            cardActionProps: 'extra',
+          position: 'both',
+          pageSize: pageSize,
+          current: page,
+          total: credentialsCount,
+          showSizeChanger: true,
+          onChange(page, pageSize) {
+            setPage(page)
+            setPageSize(pageSize)
           },
         }}
-        dataSource={credentials?.map((item: UniqueVerifiableCredential) => {
-          return {
-            title: (
-              <IdentifierProfile did={getIssuerDID(item.verifiableCredential)} />
-            ),
-            actions: [
-              <div>
-                {formatRelative(
-                  new Date(item.verifiableCredential.issuanceDate),
-                  new Date(),
-                )}
-              </div>,
-              <CredentialActionsDropdown credential={item.verifiableCredential}>
-                <Button type="text">
-                  <EllipsisOutlined />
-                </Button>
-              </CredentialActionsDropdown>,
-            ],
-            content: (
-              <div style={{ width: '100%' }}>
-                <VerifiableCredential credential={item.verifiableCredential} />
-              </div>
-            ),
-            hash: item.hash,
-          }
-        })}
+        dataSource={credentials}
+        renderItem={(item) => (
+          <div style={{marginTop: '20px'}}>
+          <VerifiableCredentialComponent credential={item} />
+          </div>
+        )}
       />
+      
     </PageContainer>
   )
 }
