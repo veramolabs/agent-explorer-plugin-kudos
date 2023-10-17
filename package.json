@@ -5,25 +5,26 @@
 	"scripts": {
 		"build": "node build.mjs",
 		"serve": "node build.mjs --serve",
-		"ngrok": "ngrok http 8080"
+		"ngrok": "ngrok http 8080",
+		"upgrade": "pnpm add -D @veramo-community/agent-explorer-plugin@latest @veramo-community/veramo-react@latest @veramo/core@next @veramo/core-types@next"
 	},
 	"devDependencies": {
-		"@ant-design/icons": "^5.2.5",
-		"@ant-design/pro-components": "^2.6.12",
-		"@types/react": "^18.2.20",
+		"@ant-design/icons": "^5.2.6",
+		"@ant-design/pro-components": "^2.6.30",
+		"@types/react": "^18.2.28",
 		"@types/react-router-dom": "^5.3.3",
-		"@veramo-community/agent-explorer-plugin": "^1.41.3",
-		"@veramo-community/veramo-react": "^1.0.82",
-		"@veramo/core": "5.5.2-next.9",
-		"@veramo/core-types": "5.5.2-next.9",
-		"antd": "^5.8.3",
+		"@veramo-community/agent-explorer-plugin": "^1.60.0",
+		"@veramo-community/veramo-react": "^1.6.1",
+		"@veramo/core": "5.5.4-next.20",
+		"@veramo/core-types": "5.5.4-next.20",
+		"antd": "^5.10.1",
 		"date-fns": "^2.30.0",
-		"esbuild": "^0.19.2",
+		"esbuild": "^0.19.5",
 		"esbuild-plugin-external-global": "^1.0.1",
 		"punycode": "^2.3.0",
 		"react": "^18.2.0",
 		"react-query": "^3.39.3",
-		"react-router-dom": "^6.15.0",
-		"typescript": "^5.1.6"
+		"react-router-dom": "^6.17.0",
+		"typescript": "^5.2.2"
 	}
 }

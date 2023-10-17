@@ -32,11 +32,11 @@ export const Kudos = () => {
       }),
   )
 
-  const handleNewKudos = async (values: ComposeKudosFormValues) => {
+  const handleNewKudos = async (values: ComposeKudosFormValues, issuerAgent: any) => {
     const issuerProfile = await agent?.getIdentifierProfile({ did: values.issuer })
     const subjectProfile = await agent?.getIdentifierProfile({ did: values.subject })
 
-    const credential = await agent?.createVerifiableCredential({
+    const credential = await issuerAgent.createVerifiableCredential({
       save: true,
       proofFormat: 'jwt',
       credential: {

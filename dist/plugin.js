@@ -82,381 +82,6 @@ var require_classnames = __commonJS({
   }
 });
 
-// node_modules/.pnpm/lodash.camelcase@4.3.0/node_modules/lodash.camelcase/index.js
-var require_lodash = __commonJS({
-  "node_modules/.pnpm/lodash.camelcase@4.3.0/node_modules/lodash.camelcase/index.js"(exports, module) {
-    var INFINITY = 1 / 0;
-    var symbolTag = "[object Symbol]";
-    var reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g;
-    var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
-    var rsAstralRange = "\\ud800-\\udfff";
-    var rsComboMarksRange = "\\u0300-\\u036f\\ufe20-\\ufe23";
-    var rsComboSymbolsRange = "\\u20d0-\\u20f0";
-    var rsDingbatRange = "\\u2700-\\u27bf";
-    var rsLowerRange = "a-z\\xdf-\\xf6\\xf8-\\xff";
-    var rsMathOpRange = "\\xac\\xb1\\xd7\\xf7";
-    var rsNonCharRange = "\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf";
-    var rsPunctuationRange = "\\u2000-\\u206f";
-    var rsSpaceRange = " \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000";
-    var rsUpperRange = "A-Z\\xc0-\\xd6\\xd8-\\xde";
-    var rsVarRange = "\\ufe0e\\ufe0f";
-    var rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange;
-    var rsApos = "['\u2019]";
-    var rsAstral = "[" + rsAstralRange + "]";
-    var rsBreak = "[" + rsBreakRange + "]";
-    var rsCombo = "[" + rsComboMarksRange + rsComboSymbolsRange + "]";
-    var rsDigits = "\\d+";
-    var rsDingbat = "[" + rsDingbatRange + "]";
-    var rsLower = "[" + rsLowerRange + "]";
-    var rsMisc = "[^" + rsAstralRange + rsBreakRange + rsDigits + rsDingbatRange + rsLowerRange + rsUpperRange + "]";
-    var rsFitz = "\\ud83c[\\udffb-\\udfff]";
-    var rsModifier = "(?:" + rsCombo + "|" + rsFitz + ")";
-    var rsNonAstral = "[^" + rsAstralRange + "]";
-    var rsRegional = "(?:\\ud83c[\\udde6-\\uddff]){2}";
-    var rsSurrPair = "[\\ud800-\\udbff][\\udc00-\\udfff]";
-    var rsUpper = "[" + rsUpperRange + "]";
-    var rsZWJ = "\\u200d";
-    var rsLowerMisc = "(?:" + rsLower + "|" + rsMisc + ")";
-    var rsUpperMisc = "(?:" + rsUpper + "|" + rsMisc + ")";
-    var rsOptLowerContr = "(?:" + rsApos + "(?:d|ll|m|re|s|t|ve))?";
-    var rsOptUpperContr = "(?:" + rsApos + "(?:D|LL|M|RE|S|T|VE))?";
-    var reOptMod = rsModifier + "?";
-    var rsOptVar = "[" + rsVarRange + "]?";
-    var rsOptJoin = "(?:" + rsZWJ + "(?:" + [rsNonAstral, rsRegional, rsSurrPair].join("|") + ")" + rsOptVar + reOptMod + ")*";
-    var rsSeq = rsOptVar + reOptMod + rsOptJoin;
-    var rsEmoji = "(?:" + [rsDingbat, rsRegional, rsSurrPair].join("|") + ")" + rsSeq;
-    var rsSymbol = "(?:" + [rsNonAstral + rsCombo + "?", rsCombo, rsRegional, rsSurrPair, rsAstral].join("|") + ")";
-    var reApos = RegExp(rsApos, "g");
-    var reComboMark = RegExp(rsCombo, "g");
-    var reUnicode = RegExp(rsFitz + "(?=" + rsFitz + ")|" + rsSymbol + rsSeq, "g");
-    var reUnicodeWord = RegExp([
-      rsUpper + "?" + rsLower + "+" + rsOptLowerContr + "(?=" + [rsBreak, rsUpper, "$"].join("|") + ")",
-      rsUpperMisc + "+" + rsOptUpperContr + "(?=" + [rsBreak, rsUpper + rsLowerMisc, "$"].join("|") + ")",
-      rsUpper + "?" + rsLowerMisc + "+" + rsOptLowerContr,
-      rsUpper + "+" + rsOptUpperContr,
-      rsDigits,
-      rsEmoji
-    ].join("|"), "g");
-    var reHasUnicode = RegExp("[" + rsZWJ + rsAstralRange + rsComboMarksRange + rsComboSymbolsRange + rsVarRange + "]");
-    var reHasUnicodeWord = /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
-    var deburredLetters = {
-      // Latin-1 Supplement block.
-      "\xC0": "A",
-      "\xC1": "A",
-      "\xC2": "A",
-      "\xC3": "A",
-      "\xC4": "A",
-      "\xC5": "A",
-      "\xE0": "a",
-      "\xE1": "a",
-      "\xE2": "a",
-      "\xE3": "a",
-      "\xE4": "a",
-      "\xE5": "a",
-      "\xC7": "C",
-      "\xE7": "c",
-      "\xD0": "D",
-      "\xF0": "d",
-      "\xC8": "E",
-      "\xC9": "E",
-      "\xCA": "E",
-      "\xCB": "E",
-      "\xE8": "e",
-      "\xE9": "e",
-      "\xEA": "e",
-      "\xEB": "e",
-      "\xCC": "I",
-      "\xCD": "I",
-      "\xCE": "I",
-      "\xCF": "I",
-      "\xEC": "i",
-      "\xED": "i",
-      "\xEE": "i",
-      "\xEF": "i",
-      "\xD1": "N",
-      "\xF1": "n",
-      "\xD2": "O",
-      "\xD3": "O",
-      "\xD4": "O",
-      "\xD5": "O",
-      "\xD6": "O",
-      "\xD8": "O",
-      "\xF2": "o",
-      "\xF3": "o",
-      "\xF4": "o",
-      "\xF5": "o",
-      "\xF6": "o",
-      "\xF8": "o",
-      "\xD9": "U",
-      "\xDA": "U",
-      "\xDB": "U",
-      "\xDC": "U",
-      "\xF9": "u",
-      "\xFA": "u",
-      "\xFB": "u",
-      "\xFC": "u",
-      "\xDD": "Y",
-      "\xFD": "y",
-      "\xFF": "y",
-      "\xC6": "Ae",
-      "\xE6": "ae",
-      "\xDE": "Th",
-      "\xFE": "th",
-      "\xDF": "ss",
-      // Latin Extended-A block.
-      "\u0100": "A",
-      "\u0102": "A",
-      "\u0104": "A",
-      "\u0101": "a",
-      "\u0103": "a",
-      "\u0105": "a",
-      "\u0106": "C",
-      "\u0108": "C",
-      "\u010A": "C",
-      "\u010C": "C",
-      "\u0107": "c",
-      "\u0109": "c",
-      "\u010B": "c",
-      "\u010D": "c",
-      "\u010E": "D",
-      "\u0110": "D",
-      "\u010F": "d",
-      "\u0111": "d",
-      "\u0112": "E",
-      "\u0114": "E",
-      "\u0116": "E",
-      "\u0118": "E",
-      "\u011A": "E",
-      "\u0113": "e",
-      "\u0115": "e",
-      "\u0117": "e",
-      "\u0119": "e",
-      "\u011B": "e",
-      "\u011C": "G",
-      "\u011E": "G",
-      "\u0120": "G",
-      "\u0122": "G",
-      "\u011D": "g",
-      "\u011F": "g",
-      "\u0121": "g",
-      "\u0123": "g",
-      "\u0124": "H",
-      "\u0126": "H",
-      "\u0125": "h",
-      "\u0127": "h",
-      "\u0128": "I",
-      "\u012A": "I",
-      "\u012C": "I",
-      "\u012E": "I",
-      "\u0130": "I",
-      "\u0129": "i",
-      "\u012B": "i",
-      "\u012D": "i",
-      "\u012F": "i",
-      "\u0131": "i",
-      "\u0134": "J",
-      "\u0135": "j",
-      "\u0136": "K",
-      "\u0137": "k",
-      "\u0138": "k",
-      "\u0139": "L",
-      "\u013B": "L",
-      "\u013D": "L",
-      "\u013F": "L",
-      "\u0141": "L",
-      "\u013A": "l",
-      "\u013C": "l",
-      "\u013E": "l",
-      "\u0140": "l",
-      "\u0142": "l",
-      "\u0143": "N",
-      "\u0145": "N",
-      "\u0147": "N",
-      "\u014A": "N",
-      "\u0144": "n",
-      "\u0146": "n",
-      "\u0148": "n",
-      "\u014B": "n",
-      "\u014C": "O",
-      "\u014E": "O",
-      "\u0150": "O",
-      "\u014D": "o",
-      "\u014F": "o",
-      "\u0151": "o",
-      "\u0154": "R",
-      "\u0156": "R",
-      "\u0158": "R",
-      "\u0155": "r",
-      "\u0157": "r",
-      "\u0159": "r",
-      "\u015A": "S",
-      "\u015C": "S",
-      "\u015E": "S",
-      "\u0160": "S",
-      "\u015B": "s",
-      "\u015D": "s",
-      "\u015F": "s",
-      "\u0161": "s",
-      "\u0162": "T",
-      "\u0164": "T",
-      "\u0166": "T",
-      "\u0163": "t",
-      "\u0165": "t",
-      "\u0167": "t",
-      "\u0168": "U",
-      "\u016A": "U",
-      "\u016C": "U",
-      "\u016E": "U",
-      "\u0170": "U",
-      "\u0172": "U",
-      "\u0169": "u",
-      "\u016B": "u",
-      "\u016D": "u",
-      "\u016F": "u",
-      "\u0171": "u",
-      "\u0173": "u",
-      "\u0174": "W",
-      "\u0175": "w",
-      "\u0176": "Y",
-      "\u0177": "y",
-      "\u0178": "Y",
-      "\u0179": "Z",
-      "\u017B": "Z",
-      "\u017D": "Z",
-      "\u017A": "z",
-      "\u017C": "z",
-      "\u017E": "z",
-      "\u0132": "IJ",
-      "\u0133": "ij",
-      "\u0152": "Oe",
-      "\u0153": "oe",
-      "\u0149": "'n",
-      "\u017F": "ss"
-    };
-    var freeGlobal = typeof global == "object" && global && global.Object === Object && global;
-    var freeSelf = typeof self == "object" && self && self.Object === Object && self;
-    var root = freeGlobal || freeSelf || Function("return this")();
-    function arrayReduce(array, iteratee, accumulator, initAccum) {
-      var index = -1, length = array ? array.length : 0;
-      if (initAccum && length) {
-        accumulator = array[++index];
-      }
-      while (++index < length) {
-        accumulator = iteratee(accumulator, array[index], index, array);
-      }
-      return accumulator;
-    }
-    function asciiToArray(string) {
-      return string.split("");
-    }
-    function asciiWords(string) {
-      return string.match(reAsciiWord) || [];
-    }
-    function basePropertyOf(object) {
-      return function(key) {
-        return object == null ? void 0 : object[key];
-      };
-    }
-    var deburrLetter = basePropertyOf(deburredLetters);
-    function hasUnicode(string) {
-      return reHasUnicode.test(string);
-    }
-    function hasUnicodeWord(string) {
-      return reHasUnicodeWord.test(string);
-    }
-    function stringToArray(string) {
-      return hasUnicode(string) ? unicodeToArray(string) : asciiToArray(string);
-    }
-    function unicodeToArray(string) {
-      return string.match(reUnicode) || [];
-    }
-    function unicodeWords(string) {
-      return string.match(reUnicodeWord) || [];
-    }
-    var objectProto = Object.prototype;
-    var objectToString = objectProto.toString;
-    var Symbol2 = root.Symbol;
-    var symbolProto = Symbol2 ? Symbol2.prototype : void 0;
-    var symbolToString = symbolProto ? symbolProto.toString : void 0;
-    function baseSlice(array, start, end) {
-      var index = -1, length = array.length;
-      if (start < 0) {
-        start = -start > length ? 0 : length + start;
-      }
-      end = end > length ? length : end;
-      if (end < 0) {
-        end += length;
-      }
-      length = start > end ? 0 : end - start >>> 0;
-      start >>>= 0;
-      var result = Array(length);
-      while (++index < length) {
-        result[index] = array[index + start];
-      }
-      return result;
-    }
-    function baseToString(value) {
-      if (typeof value == "string") {
-        return value;
-      }
-      if (isSymbol(value)) {
-        return symbolToString ? symbolToString.call(value) : "";
-      }
-      var result = value + "";
-      return result == "0" && 1 / value == -INFINITY ? "-0" : result;
-    }
-    function castSlice(array, start, end) {
-      var length = array.length;
-      end = end === void 0 ? length : end;
-      return !start && end >= length ? array : baseSlice(array, start, end);
-    }
-    function createCaseFirst(methodName) {
-      return function(string) {
-        string = toString(string);
-        var strSymbols = hasUnicode(string) ? stringToArray(string) : void 0;
-        var chr = strSymbols ? strSymbols[0] : string.charAt(0);
-        var trailing = strSymbols ? castSlice(strSymbols, 1).join("") : string.slice(1);
-        return chr[methodName]() + trailing;
-      };
-    }
-    function createCompounder(callback) {
-      return function(string) {
-        return arrayReduce(words(deburr(string).replace(reApos, "")), callback, "");
-      };
-    }
-    function isObjectLike(value) {
-      return !!value && typeof value == "object";
-    }
-    function isSymbol(value) {
-      return typeof value == "symbol" || isObjectLike(value) && objectToString.call(value) == symbolTag;
-    }
-    function toString(value) {
-      return value == null ? "" : baseToString(value);
-    }
-    var camelCase2 = createCompounder(function(result, word, index) {
-      word = word.toLowerCase();
-      return result + (index ? capitalize(word) : word);
-    });
-    function capitalize(string) {
-      return upperFirst(toString(string).toLowerCase());
-    }
-    function deburr(string) {
-      string = toString(string);
-      return string && string.replace(reLatin, deburrLetter).replace(reComboMark, "");
-    }
-    var upperFirst = createCaseFirst("toUpperCase");
-    function words(string, pattern, guard) {
-      string = toString(string);
-      pattern = guard ? void 0 : pattern;
-      if (pattern === void 0) {
-        return hasUnicodeWord(string) ? unicodeWords(string) : asciiWords(string);
-      }
-      return string.match(pattern) || [];
-    }
-    module.exports = camelCase2;
-  }
-});
-
 // external-global-plugin:react-router-dom
 var require_react_router_dom = __commonJS({
   "external-global-plugin:react-router-dom"(exports, module) {
@@ -506,12 +131,12 @@ var require_jsx_runtime = __commonJS({
   }
 });
 
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/Context.js
+// node_modules/.pnpm/@ant-design+icons@5.2.6_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/Context.js
 var import_react = __toESM(require_react());
 var IconContext = /* @__PURE__ */ (0, import_react.createContext)({});
 var Context_default = IconContext;
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/extends.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/extends.js
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -527,13 +152,13 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr))
     return arr;
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
 function _iterableToArrayLimit(r, l) {
   var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
   if (null != t) {
@@ -561,7 +186,7 @@ function _iterableToArrayLimit(r, l) {
   }
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
 function _arrayLikeToArray(arr, len) {
   if (len == null || len > arr.length)
     len = arr.length;
@@ -570,7 +195,7 @@ function _arrayLikeToArray(arr, len) {
   return arr2;
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
 function _unsupportedIterableToArray(o, minLen) {
   if (!o)
     return;
@@ -585,17 +210,17 @@ function _unsupportedIterableToArray(o, minLen) {
     return _arrayLikeToArray(o, minLen);
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
 function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/slicedToArray.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/slicedToArray.js
 function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/typeof.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/typeof.js
 function _typeof(o) {
   "@babel/helpers - typeof";
   return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o2) {
@@ -605,7 +230,7 @@ function _typeof(o) {
   }, _typeof(o);
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/toPrimitive.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/toPrimitive.js
 function _toPrimitive(input, hint) {
   if (_typeof(input) !== "object" || input === null)
     return input;
@@ -619,13 +244,13 @@ function _toPrimitive(input, hint) {
   return (hint === "string" ? String : Number)(input);
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js
 function _toPropertyKey(arg) {
   var key = _toPrimitive(arg, "string");
   return _typeof(key) === "symbol" ? key : String(key);
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/defineProperty.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/defineProperty.js
 function _defineProperty(obj, key, value) {
   key = _toPropertyKey(key);
   if (key in obj) {
@@ -641,7 +266,7 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null)
     return {};
@@ -657,7 +282,7 @@ function _objectWithoutPropertiesLoose(source, excluded) {
   return target;
 }
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
 function _objectWithoutProperties(source, excluded) {
   if (source == null)
     return {};
@@ -677,7 +302,7 @@ function _objectWithoutProperties(source, excluded) {
   return target;
 }
 
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/AntdIcon.js
+// node_modules/.pnpm/@ant-design+icons@5.2.6_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/AntdIcon.js
 var React3 = __toESM(require_react());
 var import_classnames = __toESM(require_classnames());
 
@@ -1312,7 +937,7 @@ var magenta = presetPalettes.magenta;
 var grey = presetPalettes.grey;
 var gray = presetPalettes.grey;
 
-// node_modules/.pnpm/@babel+runtime@7.22.15/node_modules/@babel/runtime/helpers/esm/objectSpread2.js
+// node_modules/.pnpm/@babel+runtime@7.23.2/node_modules/@babel/runtime/helpers/esm/objectSpread2.js
 function ownKeys(e, r) {
   var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
@@ -1335,18 +960,15 @@ function _objectSpread2(e) {
   return e;
 }
 
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/IconBase.js
+// node_modules/.pnpm/@ant-design+icons@5.2.6_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/IconBase.js
 var React2 = __toESM(require_react());
 
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/utils.js
-var import_lodash = __toESM(require_lodash());
-
-// node_modules/.pnpm/rc-util@5.37.0_react-dom@18.2.0_react@18.2.0/node_modules/rc-util/es/Dom/canUseDom.js
+// node_modules/.pnpm/rc-util@5.38.0_react-dom@18.2.0_react@18.2.0/node_modules/rc-util/es/Dom/canUseDom.js
 function canUseDom() {
   return !!(typeof window !== "undefined" && window.document && window.document.createElement);
 }
 
-// node_modules/.pnpm/rc-util@5.37.0_react-dom@18.2.0_react@18.2.0/node_modules/rc-util/es/Dom/contains.js
+// node_modules/.pnpm/rc-util@5.38.0_react-dom@18.2.0_react@18.2.0/node_modules/rc-util/es/Dom/contains.js
 function contains(root, n) {
   if (!root) {
     return false;
@@ -1364,7 +986,7 @@ function contains(root, n) {
   return false;
 }
 
-// node_modules/.pnpm/rc-util@5.37.0_react-dom@18.2.0_react@18.2.0/node_modules/rc-util/es/Dom/dynamicCSS.js
+// node_modules/.pnpm/rc-util@5.38.0_react-dom@18.2.0_react@18.2.0/node_modules/rc-util/es/Dom/dynamicCSS.js
 var APPEND_ORDER = "data-rc-order";
 var APPEND_PRIORITY = "data-rc-priority";
 var MARK_KEY = "rc-util-key";
@@ -1470,7 +1092,7 @@ function updateCSS(css, key) {
   return newNode;
 }
 
-// node_modules/.pnpm/rc-util@5.37.0_react-dom@18.2.0_react@18.2.0/node_modules/rc-util/es/Dom/shadow.js
+// node_modules/.pnpm/rc-util@5.38.0_react-dom@18.2.0_react@18.2.0/node_modules/rc-util/es/Dom/shadow.js
 function getRoot(ele) {
   var _ele$getRootNode;
   return ele === null || ele === void 0 ? void 0 : (_ele$getRootNode = ele.getRootNode) === null || _ele$getRootNode === void 0 ? void 0 : _ele$getRootNode.call(ele);
@@ -1482,7 +1104,7 @@ function getShadowRoot(ele) {
   return inShadow(ele) ? getRoot(ele) : null;
 }
 
-// node_modules/.pnpm/rc-util@5.37.0_react-dom@18.2.0_react@18.2.0/node_modules/rc-util/es/warning.js
+// node_modules/.pnpm/rc-util@5.38.0_react-dom@18.2.0_react@18.2.0/node_modules/rc-util/es/warning.js
 var warned = {};
 var preWarningFns = [];
 var preMessage = function preMessage2(fn) {
@@ -1528,8 +1150,13 @@ warningOnce.resetWarned = resetWarned;
 warningOnce.noteOnce = noteOnce;
 var warning_default = warningOnce;
 
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/utils.js
+// node_modules/.pnpm/@ant-design+icons@5.2.6_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/utils.js
 var import_react2 = __toESM(require_react());
+function camelCase(input) {
+  return input.replace(/-(.)/g, function(match, g) {
+    return g.toUpperCase();
+  });
+}
 function warning2(valid, message) {
   warning_default(valid, "[@ant-design/icons] ".concat(message));
 }
@@ -1547,7 +1174,7 @@ function normalizeAttrs() {
         break;
       default:
         delete acc[key];
-        acc[(0, import_lodash.default)(key)] = val;
+        acc[camelCase(key)] = val;
     }
     return acc;
   }, {});
@@ -1593,7 +1220,7 @@ var useInsertStyles = function useInsertStyles2(eleRef) {
   }, []);
 };
 
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/IconBase.js
+// node_modules/.pnpm/@ant-design+icons@5.2.6_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/IconBase.js
 var _excluded = ["icon", "className", "onClick", "style", "primaryColor", "secondaryColor"];
 var twoToneColorPalette = {
   primaryColor: "#333",
@@ -1648,7 +1275,7 @@ IconBase.getTwoToneColors = getTwoToneColors;
 IconBase.setTwoToneColors = setTwoToneColors;
 var IconBase_default = IconBase;
 
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/twoTonePrimaryColor.js
+// node_modules/.pnpm/@ant-design+icons@5.2.6_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/twoTonePrimaryColor.js
 function setTwoToneColor(twoToneColor) {
   var _normalizeTwoToneColo = normalizeTwoToneColors(twoToneColor), _normalizeTwoToneColo2 = _slicedToArray(_normalizeTwoToneColo, 2), primaryColor = _normalizeTwoToneColo2[0], secondaryColor = _normalizeTwoToneColo2[1];
   return IconBase_default.setTwoToneColors({
@@ -1664,7 +1291,7 @@ function getTwoToneColor() {
   return [colors.primaryColor, colors.secondaryColor];
 }
 
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/AntdIcon.js
+// node_modules/.pnpm/@ant-design+icons@5.2.6_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/components/AntdIcon.js
 var _excluded2 = ["className", "icon", "spin", "rotate", "tabIndex", "onClick", "twoToneColor"];
 setTwoToneColor(blue.primary);
 var Icon = /* @__PURE__ */ React3.forwardRef(function(props, ref) {
@@ -1701,14 +1328,14 @@ Icon.getTwoToneColor = getTwoToneColor;
 Icon.setTwoToneColor = setTwoToneColor;
 var AntdIcon_default = Icon;
 
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/icons/CrownOutlined.js
+// node_modules/.pnpm/@ant-design+icons@5.2.6_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/icons/CrownOutlined.js
 var React4 = __toESM(require_react());
 
 // node_modules/.pnpm/@ant-design+icons-svg@4.3.1/node_modules/@ant-design/icons-svg/es/asn/CrownOutlined.js
 var CrownOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M899.6 276.5L705 396.4 518.4 147.5a8.06 8.06 0 00-12.9 0L319 396.4 124.3 276.5c-5.7-3.5-13.1 1.2-12.2 7.9L188.5 865c1.1 7.9 7.9 14 16 14h615.1c8 0 14.9-6 15.9-14l76.4-580.6c.8-6.7-6.5-11.4-12.3-7.9zm-126 534.1H250.3l-53.8-409.4 139.8 86.1L512 252.9l175.7 234.4 139.8-86.1-53.9 409.4zM512 509c-62.1 0-112.6 50.5-112.6 112.6S449.9 734.2 512 734.2s112.6-50.5 112.6-112.6S574.1 509 512 509zm0 160.9c-26.6 0-48.2-21.6-48.2-48.3 0-26.6 21.6-48.3 48.2-48.3s48.2 21.6 48.2 48.3c0 26.6-21.6 48.3-48.2 48.3z" } }] }, "name": "crown", "theme": "outlined" };
 var CrownOutlined_default = CrownOutlined;
 
-// node_modules/.pnpm/@ant-design+icons@5.2.5_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/icons/CrownOutlined.js
+// node_modules/.pnpm/@ant-design+icons@5.2.6_react-dom@18.2.0_react@18.2.0/node_modules/@ant-design/icons/es/icons/CrownOutlined.js
 var CrownOutlined2 = function CrownOutlined3(props, ref) {
   return /* @__PURE__ */ React4.createElement(AntdIcon_default, _extends({}, props, {
     ref,
@@ -1721,19 +1348,17 @@ if (true) {
 var CrownOutlined_default2 = /* @__PURE__ */ React4.forwardRef(CrownOutlined2);
 
 // src/Kudos.tsx
-var import_react4 = __toESM(require_react(), 1);
+var import_react3 = __toESM(require_react(), 1);
 var import_react_router_dom = __toESM(require_react_router_dom(), 1);
-var import_react_query2 = __toESM(require_react_query(), 1);
+var import_react_query = __toESM(require_react_query(), 1);
 var import_veramo_react2 = __toESM(require_veramo_react(), 1);
 var import_pro_components = __toESM(require_pro_components(), 1);
 var import_agent_explorer_plugin2 = __toESM(require_agent_explorer_plugin(), 1);
 var import_antd2 = __toESM(require_antd(), 1);
 
 // src/ComposeKudosForm.tsx
-var import_react3 = __toESM(require_react(), 1);
 var import_antd = __toESM(require_antd(), 1);
 var import_veramo_react = __toESM(require_veramo_react(), 1);
-var import_react_query = __toESM(require_react_query(), 1);
 var import_agent_explorer_plugin = __toESM(require_agent_explorer_plugin(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 var { Option } = import_antd.Select;
@@ -1743,42 +1368,13 @@ var ComposeKudosForm = ({
   const { agent } = (0, import_veramo_react.useVeramo)();
   const { token } = import_antd.theme.useToken();
   const [form] = import_antd.Form.useForm();
-  const issuer = import_antd.Form.useWatch("issuer", { form, preserve: true });
-  const subject = import_antd.Form.useWatch("subject", { form, preserve: true });
-  const [issuerProfile, setIssuerProfile] = (0, import_react3.useState)();
-  const [managedIdentifiers, setManagedIdentifiers] = (0, import_react3.useState)([]);
-  const [
-    managedIdentifiersWithProfiles,
-    setManagedIdentifiersWithProfiles
-  ] = (0, import_react3.useState)([]);
-  (0, import_react_query.useQuery)(
-    ["identifiers", { id: agent?.context.id }],
-    () => agent?.didManagerFind(),
-    {
-      onSuccess: (data) => {
-        if (data) {
-          setManagedIdentifiers(data);
-          form.setFieldValue("issuer", data[0].did);
-        }
-      }
-    }
-  );
-  (0, import_react3.useEffect)(() => {
-    if (agent) {
-      Promise.all(
-        managedIdentifiers.map((identifier) => {
-          return agent.getIdentifierProfile({ did: identifier.did });
-        })
-      ).then((profiles) => {
-        setIssuerProfile(profiles[0]);
-        setManagedIdentifiersWithProfiles(profiles);
-      }).catch(console.log);
-    }
-  }, [managedIdentifiers, agent]);
-  const handleOk = () => {
+  const handleOk = (did, agent2) => {
     form.validateFields().then((values) => {
       form.resetFields();
-      onNewKudos(values);
+      onNewKudos({
+        ...values,
+        issuer: did
+      }, agent2);
     }).catch((info) => {
       console.log("Validate Failed:", info);
     });
@@ -1787,7 +1383,6 @@ var ComposeKudosForm = ({
     import_antd.Form,
     {
       form,
-      layout: "inline",
       name: "form_in_form",
       initialValues: {},
       style: {
@@ -1797,34 +1392,12 @@ var ComposeKudosForm = ({
         marginRight: token.controlPaddingHorizontal
       },
       children: [
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Form.Item, { name: "issuer", hidden: true, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Input, {}) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Form.Item, { name: "subject", label: "To", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Input, { placeholder: "did:example:123" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Form.Item, { name: "subject", hidden: true }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Form.Item, { label: "To", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_agent_explorer_plugin.DIDDiscoveryBar, { handleSelect: (did) => {
+          form.setFieldsValue({ subject: did });
+        } }) }),
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Form.Item, { name: "kudos", label: "Kudos", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Input, { placeholder: "Thank you!" }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Form.Item, { children: managedIdentifiersWithProfiles.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
-          import_antd.Dropdown.Button,
-          {
-            type: "primary",
-            onClick: handleOk,
-            icon: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_antd.Avatar, { size: "small", src: issuerProfile?.picture }),
-            menu: {
-              items: [
-                ...managedIdentifiersWithProfiles.map((profile) => {
-                  return {
-                    key: profile.did,
-                    onClick: () => {
-                      setIssuerProfile(profile);
-                      form.setFieldValue("issuer", profile.did);
-                    },
-                    label: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_agent_explorer_plugin.IdentifierProfile, { did: profile.did })
-                  };
-                })
-              ],
-              selectable: true,
-              defaultSelectedKeys: [issuer]
-            },
-            children: "Give kudos as"
-          }
-        ) })
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_agent_explorer_plugin.ActionButton, { onAction: handleOk, title: "Give kudos and save to:" })
       ]
     }
   );
@@ -1834,27 +1407,27 @@ var ComposeKudosForm = ({
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var Kudos = () => {
   const navigate = (0, import_react_router_dom.useNavigate)();
-  const [pageSize, setPageSize] = import_react4.default.useState(10);
-  const [page, setPage] = import_react4.default.useState(1);
+  const [pageSize, setPageSize] = import_react3.default.useState(10);
+  const [page, setPage] = import_react3.default.useState(1);
   const { agent } = (0, import_veramo_react2.useVeramo)();
   const { notification } = import_antd2.App.useApp();
-  const { data: credentialsCount } = (0, import_react_query2.useQuery)(
+  const { data: credentialsCount } = (0, import_react_query.useQuery)(
     ["credentialsCount", { agentId: agent?.context.name }],
     () => agent?.dataStoreORMGetVerifiableCredentialsCount({
       where: [{ column: "type", value: ["VerifiableCredential,Kudos"] }]
     })
   );
-  const { data: credentials, isLoading, refetch } = (0, import_react_query2.useQuery)(
+  const { data: credentials, isLoading, refetch } = (0, import_react_query.useQuery)(
     ["credentials", { agentId: agent?.context.name }],
     () => agent?.dataStoreORMGetVerifiableCredentials({
       where: [{ column: "type", value: ["VerifiableCredential,Kudos"] }],
       order: [{ column: "issuanceDate", direction: "DESC" }]
     })
   );
-  const handleNewKudos = async (values) => {
+  const handleNewKudos = async (values, issuerAgent) => {
     const issuerProfile = await agent?.getIdentifierProfile({ did: values.issuer });
     const subjectProfile = await agent?.getIdentifierProfile({ did: values.subject });
-    const credential = await agent?.createVerifiableCredential({
+    const credential = await issuerAgent.createVerifiableCredential({
       save: true,
       proofFormat: "jwt",
       credential: {
