@@ -18,17 +18,17 @@ devDependencies:
     specifier: ^5.3.3
     version: 5.3.3
   '@veramo-community/agent-explorer-plugin':
-    specifier: ^1.60.0
-    version: 1.60.0(@types/react@18.2.28)(rc-field-form@1.39.0)
+    specifier: ^1.65.0
+    version: 1.65.0(@types/react@18.2.28)(rc-field-form@1.39.0)
   '@veramo-community/veramo-react':
-    specifier: ^1.6.1
-    version: 1.6.1
+    specifier: ^1.6.2
+    version: 1.6.2
   '@veramo/core':
-    specifier: 5.5.4-next.20
-    version: 5.5.4-next.20
+    specifier: 5.5.4-next.22
+    version: 5.5.4-next.22
   '@veramo/core-types':
-    specifier: 5.5.4-next.20
-    version: 5.5.4-next.20
+    specifier: 5.5.4-next.22
+    version: 5.5.4-next.22
   antd:
     specifier: ^5.10.1
     version: 5.10.1(date-fns@2.30.0)(react-dom@18.2.0)(react@18.2.0)
@@ -1248,17 +1248,17 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@veramo-community/agent-explorer-plugin@1.60.0(@types/react@18.2.28)(rc-field-form@1.39.0):
-    resolution: {integrity: sha512-MdwEvx3idp+5eUdG53t7EQN79MGXdXamRVH2atF3deE6P7YaRWPqoouuZkCOzWvtG3AqZo4WTm3GTqnxJ4VSqA==}
+  /@veramo-community/agent-explorer-plugin@1.65.0(@types/react@18.2.28)(rc-field-form@1.39.0):
+    resolution: {integrity: sha512-MnQ0AVyodkTUZddx4UDs+uLJWaWEzZ8xzZsKRKLU9+BbV3RU52HH0qJA1LnT0osw5lIgZIS6DXfORip7y5pQVw==}
     dependencies:
       '@ant-design/icons': 5.2.6(react-dom@18.2.0)(react@18.2.0)
       '@ant-design/pro-components': 2.6.30(antd@5.8.6)(rc-field-form@1.39.0)(react-dom@18.2.0)(react@18.2.0)
       '@veramo-community/veramo-react': 1.6.1
-      '@veramo/core': 5.5.4-next.20
-      '@veramo/core-types': 5.5.4-next.20
-      '@veramo/data-store': 5.5.4-next.20
-      '@veramo/did-discovery': 5.5.4-next.20
-      '@veramo/utils': 5.5.4-next.20
+      '@veramo/core': 5.5.4-next.22
+      '@veramo/core-types': 5.5.4-next.22
+      '@veramo/data-store': 5.5.4-next.22
+      '@veramo/did-discovery': 5.5.4-next.22
+      '@veramo/utils': 5.5.4-next.22
       antd: 5.8.6(date-fns@2.30.0)(react-dom@18.2.0)(react@18.2.0)
       date-fns: 2.30.0
       did-jwt-vc: 3.2.11
@@ -1268,6 +1268,7 @@ packages:
       react-markdown: 9.0.0(@types/react@18.2.28)(react@18.2.0)
       react-query: 3.39.3(react-dom@18.2.0)(react@18.2.0)
       react-router-dom: 6.17.0(react-dom@18.2.0)(react@18.2.0)
+      rehype-video: 2.0.0
       remark-gfm: 4.0.0
       typescript: 5.2.2
       unified: 11.0.3
@@ -1313,8 +1314,20 @@ packages:
       - supports-color
     dev: true
 
-  /@veramo/core-types@5.5.4-next.20:
-    resolution: {integrity: sha512-AIO8A/azz+tPEg9QHwplaF9omBY5v2BfQQhG5BCWCYQZ4XTAslrQ3dXkKtJm5CNX0UHEtzUOY1g2vAn3wBTupQ==}
+  /@veramo-community/veramo-react@1.6.2:
+    resolution: {integrity: sha512-bXLQzVmG8ZP/7feFHKsFtBOK/sS/EhJxIwBVMxgK8Z0hhymlXMUKBUMs4lWdXMjJDSYahTnOUz090ZuaWdBb5A==}
+    dependencies:
+      '@veramo/core': 5.5.4-next.22
+      '@veramo/remote-client': 5.5.4-next.22
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: true
+
+  /@veramo/core-types@5.5.4-next.22:
+    resolution: {integrity: sha512-EmVhsW5i7Hloc0kx9Ze6xrS6n7P71HDC19DKjLuG2YrtZnIaykTByY27C7eM+xEy+7ImYcXp97rb4Vz429r7sw==}
     dependencies:
       credential-status: 2.0.6
       debug: 4.3.4
@@ -1327,7 +1340,7 @@ packages:
   /@veramo/core@5.5.4-next.20:
     resolution: {integrity: sha512-ac6qaavJx7SQLlM5S8w8yeaYc26b6FFEoYw2y3DAQueBDAtDAgo6eYWRtGSF0pJ1Rr2blbq/0vRJZkNrQqqz6A==}
     dependencies:
-      '@veramo/core-types': 5.5.4-next.20
+      '@veramo/core-types': 5.5.4-next.22
       debug: 4.3.4
       events: 3.3.0
       z-schema: 6.0.1
@@ -1335,14 +1348,25 @@ packages:
       - supports-color
     dev: true
 
-  /@veramo/data-store@5.5.4-next.20:
-    resolution: {integrity: sha512-UWD1b/0MknCkS3vJpPWusDtr7LN5fE7dk+EGVEYjAkBb+yAOvtD0uN2qxbZ5noIQTgN4Oq1hOO0Down4zHi2tQ==}
+  /@veramo/core@5.5.4-next.22:
+    resolution: {integrity: sha512-WlLDFlzat5bkZwcnzOeXdkyvvI5IAoIZM178VODKKhvmIk2FcOyuPWXPH6io4m4VpvDU1HVTMu2/4qMvygrh/A==}
     dependencies:
-      '@veramo/core-types': 5.5.4-next.20
-      '@veramo/did-discovery': 5.5.4-next.20
-      '@veramo/did-manager': 5.5.4-next.20
-      '@veramo/key-manager': 5.5.4-next.20
-      '@veramo/utils': 5.5.4-next.20
+      '@veramo/core-types': 5.5.4-next.22
+      debug: 4.3.4
+      events: 3.3.0
+      z-schema: 6.0.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@veramo/data-store@5.5.4-next.22:
+    resolution: {integrity: sha512-jcle9n0g7zyz03qH46v+E+RLJaOL2vGMKLIru5UJR3dA/JxNth9g87GxIXaTSSEZxng5aEsOrt1VMnMyj17dlg==}
+    dependencies:
+      '@veramo/core-types': 5.5.4-next.22
+      '@veramo/did-discovery': 5.5.4-next.22
+      '@veramo/did-manager': 5.5.4-next.22
+      '@veramo/key-manager': 5.5.4-next.22
+      '@veramo/utils': 5.5.4-next.22
       debug: 4.3.4
       did-jwt-vc: 3.2.11
       typeorm: 0.3.17
@@ -1369,30 +1393,30 @@ packages:
       - typeorm-aurora-data-api-driver
     dev: true
 
-  /@veramo/did-discovery@5.5.4-next.20:
-    resolution: {integrity: sha512-aLk/nIySytSZ9it1jqCUdpb+OsEHCbA6KmwxBhM/6VlijRrx53emRyE/GHTEAdIiFPERzkix4iOCDgoMA7GkSw==}
+  /@veramo/did-discovery@5.5.4-next.22:
+    resolution: {integrity: sha512-SoRh6v4V9lr8y1xDIxcekPxzLxtdbliTuKoDJXZPxKghLA62NcjlYHzWbYj57GiYcy1SuBsptJaz5/2WUNFfog==}
     dependencies:
-      '@veramo/core-types': 5.5.4-next.20
+      '@veramo/core-types': 5.5.4-next.22
       debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@veramo/did-manager@5.5.4-next.20:
-    resolution: {integrity: sha512-yKoOYIhAi+bgdAFdlXtVFwSDUHe6V9p0YfoxXRH9HVGvxPwthoGMnD2AB39LGPKaXoqpDuiU012RoOTUn0kD4g==}
+  /@veramo/did-manager@5.5.4-next.22:
+    resolution: {integrity: sha512-TDycPnCXLnsPN0Fk0YbkdbfrkirpvkTP2eYBo9RZB+GfHyBLcBi1IiHW4H+y5+HnW5csJfAq2+l9USO4IPZKOg==}
     dependencies:
-      '@veramo/core-types': 5.5.4-next.20
-      '@veramo/did-discovery': 5.5.4-next.20
+      '@veramo/core-types': 5.5.4-next.22
+      '@veramo/did-discovery': 5.5.4-next.22
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@veramo/key-manager@5.5.4-next.20:
-    resolution: {integrity: sha512-8SZAylXosfgJ/JZjVoW89RHbCZIfl2VdXiqPgRlwLxA2Di2urIdg8Ip8GXaTAlajNFdcuo6WkMU/+IMoZjiCxQ==}
+  /@veramo/key-manager@5.5.4-next.22:
+    resolution: {integrity: sha512-vTXf48Tx4KS08jN0DWutGqbyjSinTvRqAOfHGCNqHEJDVP3RSl53Vd5OZM+323QirIWHJ2Ae1bNGx9fxzb/FAQ==}
     dependencies:
       '@noble/curves': 1.2.0
-      '@veramo/core-types': 5.5.4-next.20
-      '@veramo/utils': 5.5.4-next.20
+      '@veramo/core-types': 5.5.4-next.22
+      '@veramo/utils': 5.5.4-next.22
       debug: 4.3.4
       did-jwt: 7.4.2
       uint8arrays: 4.0.6
@@ -1405,7 +1429,7 @@ packages:
   /@veramo/remote-client@5.5.4-next.20:
     resolution: {integrity: sha512-41OalN4t0SWfBnPTpds8Z0kCTM/SWjrOj0Hao9hn8HuqRp24foOupomot2Ga8tGnK/jdAmXTSwwZd/1/UM49sA==}
     dependencies:
-      '@veramo/core-types': 5.5.4-next.20
+      '@veramo/core-types': 5.5.4-next.22
       cross-fetch: 4.0.0
       debug: 4.3.4
       openapi-types: 12.1.3
@@ -1414,12 +1438,24 @@ packages:
       - supports-color
     dev: true
 
-  /@veramo/utils@5.5.4-next.20:
-    resolution: {integrity: sha512-a1WhWR0/Yywx1emanbWPtqaw12GyYwEsJ58GOmzm3vW1zUyL7lQ3E4ustTYxGVIIbXKrv1WxO9eVFu2vHBvVOA==}
+  /@veramo/remote-client@5.5.4-next.22:
+    resolution: {integrity: sha512-yNlhKYMQ3HATFVW6swA3cHRvNUg79+1lGq9kFeQERwDAs0I0F1yiXubU1+ZBaE8KUfyaec85JB+sSKdz7RrnxQ==}
+    dependencies:
+      '@veramo/core-types': 5.5.4-next.22
+      cross-fetch: 4.0.0
+      debug: 4.3.4
+      openapi-types: 12.1.3
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: true
+
+  /@veramo/utils@5.5.4-next.22:
+    resolution: {integrity: sha512-n/aPMT9evU0Zb6dsBVSxNT1uvF535/nF+KNWqDWqwpPaNykYLFzRX4se3iW0x80FObBvZnifS+doHN3E6RhHJQ==}
     dependencies:
       '@ipld/dag-pb': 4.0.6
       '@noble/curves': 1.2.0
-      '@veramo/core-types': 5.5.4-next.20
+      '@veramo/core-types': 5.5.4-next.22
       credential-status: 2.0.6
       cross-fetch: 4.0.0
       debug: 4.3.4
@@ -3608,6 +3644,14 @@ packages:
 
   /regenerator-runtime@0.14.0:
     resolution: {integrity: sha512-srw17NI0TUWHuGa5CFGGmhfNIeja30WMBfbslPNhf6JrqQlLN5gcrvig1oqPxiVaXb0oW0XRKtH6Nngs5lKCIA==}
+    dev: true
+
+  /rehype-video@2.0.0:
+    resolution: {integrity: sha512-NRtkwmA8MmH5psBH23+QZhT1OxFfEVq129/on+lVseew76ZbrBRMB/XwSjft+zt83GXvtQPeMMOElGGp8OHqWA==}
+    engines: {node: '>=16'}
+    dependencies:
+      unified: 11.0.3
+      unist-util-visit: 5.0.0
     dev: true
 
   /remark-gfm@4.0.0:

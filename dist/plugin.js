@@ -1523,6 +1523,7 @@ var Plugin = {
     return {
       name: "Kudos",
       description: "Explore and give kudos",
+      icon: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(CrownOutlined_default2, {}),
       requiredMethods: [],
       routes: [
         {

@@ -14,6 +14,7 @@ const Plugin: IPlugin = {
         return {
           name: 'Kudos',
           description: 'Explore and give kudos',
+          icon: <CrownOutlined />,
           requiredMethods: [],
           routes: [
             {
